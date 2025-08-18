@@ -24,12 +24,45 @@
     $revisao_carro4 = true;
     $donos_carro4 = 7;
 
-    function calcularvalor($marca, $ano, $donos) {
-        $ano_atual = (int)date("Y");
-        $idade = $ano_atual - $ano;
-        $depreciacao = ($idade * 0.05) + ($donos * 0.02);
-        return min($depreciacao, 0.8);
+function calcularValor($marca, $ano, $Ndonos) {
+    // Define o preço base de acordo com a marca
+    switch ($marca) {
+        case "BMW":
+        case "Fiat":
+            $preco_base = 300000;
+            break;
+        case "Volkswagem":
+            $preco_base = 70000;
+            break;
+        case "Honda":
+            $preco_base = 150000;
+            break;
+        default:
+            $preco_base = 0; // Marca desconhecida
     }
 
-    echo "O valor de mercado do $modelo_carro3 é " . (1 - calcularvalor($marca_carro3, $ano_carro3, $donos_carro3)) * 100 . "% do valor original.<br>";
+    // Calcula a depreciação por ano
+    $ano_atual = date("Y");
+    $anos_de_uso = $ano_atual - $ano;
+    $depreciacao_ano = $anos_de_uso * 3000;
+
+    // Calcula a depreciação por número de donos além do primeiro
+    $depreciacao_donos = 0;
+    if ($Ndonos > 1) {
+        $depreciacao_donos = ($Ndonos - 1) * 0.05;
+    }
+
+    // Aplica depreciações
+    $valor_final = $preco_base - $depreciacao_ano;
+    $valor_final -= $valor_final * $depreciacao_donos;
+
+    // Evita valor negativo
+    return max($valor_final, 0);
+}
+
+// Cálculo e exibição dos valores
+echo "Valor estimado do $marca_carro1 $modelo_carro1: R$ " . number_format(calcularValor($marca_carro1, $ano_carro1, $donos_carro1), 2, ',', '.') . "\n";
+echo "Valor estimado do $marca_carro2 $modelo_carro2: R$ " . number_format(calcularValor($marca_carro2, $ano_carro2, $donos_carro2), 2, ',', '.') . "\n";
+echo "Valor estimado do $marca_carro3 $modelo_carro3: R$ " . number_format(calcularValor($marca_carro3, $ano_carro3, $donos_carro3), 2, ',', '.') . "\n";
+echo "Valor estimado do $marca_carro4 $modelo_carro4: R$ " . number_format(calcularValor($marca_carro4, $ano_carro4, $donos_carro4), 2, ',', '.') . "\n";
 ?>
