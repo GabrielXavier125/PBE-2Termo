@@ -11,10 +11,10 @@ class Pessoa {
 
     // Criando construtor para a classe Pessoa
     public function __construct($nome, $cpf, $telefone, $idade, $email, $senha) {
-        $this->nome = $nome;
-        $this->cpf = $cpf;
-        $this->telefone = $telefone;
-        $this->idade = $idade;
+        $this->setNome($nome);
+        $this->setCpf($cpf);
+        $this->setTelefone($telefone);
+        $this->setIdade($idade);
         $this->email = $email;
         $this->senha = $senha;
     }
@@ -38,13 +38,22 @@ class Pessoa {
     }
 
     public function setTelefone($telefone) {  // Setter Telefone
-        $this->telefone = preg_replace('/[^0-9]/', '', $telefone); // Remove caracteres não numéricos
+        $this->telefone = preg_replace('/\D/', '', $telefone); // Remove caracteres não numéricos
     }
 
     public function getTelefone() {  // Getter Telefone
         return $this->telefone; 
     }
 
+    public function setIdade($idade) {  // Setter Idade
+        $this->idade = abs((int)$idade); // Garante que a idade seja um número inteiro positivo
+    }
     
-    
+    public function getIdade() {  // Getter Idade
+        return $this->idade;
+    }
 }
+
+$aluno1 = new Pessoa ("Gabriel Xavier", "123.456.789-00", "(11) 91234-5678", 20, "meuemail@gmail.com", "minhasenha123");
+
+echo $aluno1->getNome(); // Saída: Gabriel Xavier
