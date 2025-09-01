@@ -28,6 +28,8 @@ class Carro {
     }
 }
 
+$carro1 = new Carro("Civic", "Honda");
+
 echo "O modelo do carro é: " . $this->modelo . " e a marca é: " . $this->marca . "\n";
 
 
@@ -66,6 +68,8 @@ class Pessoa {
         return $this->email;
     }
 }
+
+$pessoa1 = new Pessoa("Carlos Silva", 30, "carlossilva@gmail.com");
 
 echo "O nome da pessoa é: " . $this->nome . ", a idade é: " . $this->idade . " e o email é: " . $this->email . "\n";
 
@@ -158,6 +162,8 @@ class Produto{
         return $this->estoque;
     }
 }
+
+$produto1 = new Produto("Notebook", 3500, 10);
 
 echo "O produto " . $this->nome . " custa R$" . $this->preco . " e tem " . $this->estoque . " unidades em estoque.\n";
 
