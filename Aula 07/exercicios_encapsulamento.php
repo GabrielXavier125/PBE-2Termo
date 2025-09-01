@@ -29,8 +29,7 @@ class Carro {
 }
 
 $carro1 = new Carro("Civic", "Honda");
-
-echo "O modelo do carro é: " . $this->modelo . " e a marca é: " . $this->marca . "\n";
+echo "O modelo do carro é " . $carro1->getModelo() . " e a marca é " . $carro1->getMarca() . "\n";
 
 
 
@@ -70,8 +69,7 @@ class Pessoa {
 }
 
 $pessoa1 = new Pessoa("Carlos Silva", 30, "carlossilva@gmail.com");
-
-echo "O nome da pessoa é: " . $this->nome . ", a idade é: " . $this->idade . " e o email é: " . $this->email . "\n";
+echo "O nome da pessoa é " . $pessoa1->getNome() . ", a idade é " . $pessoa1->getIdade() . " e o email é: " . $pessoa1->getEmail() . "\n";
 
 
 
@@ -119,7 +117,7 @@ echo $aluno1->getNome() . " tem nota " . $aluno1->getNota() . "\n";
 
 // Exercicio 4
 
-class Produto{
+class Produto {
     private $nome;
     private $preco;
     private $estoque;
@@ -164,8 +162,7 @@ class Produto{
 }
 
 $produto1 = new Produto("Notebook", 3500, 10);
-
-echo "O produto " . $this->nome . " custa R$" . $this->preco . " e tem " . $this->estoque . " unidades em estoque.\n";
+echo "O produto " . $produto1->getNome() . " custa R$" . $produto1->getPreco() . " e tem " . $produto1->getEstoque() . " unidades em estoque.\n";
 
 
 
