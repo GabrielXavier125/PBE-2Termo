@@ -61,6 +61,10 @@ class Pessoa {
     public function setIdade($idade) {
         $this->idade = $idade;
     }
+
+    public function getEmail() {
+        return $this->email;
+    }
 }
 
 echo "O nome da pessoa é: " . $this->nome . ", a idade é: " . $this->idade . " e o email é: " . $this->email . "\n";
