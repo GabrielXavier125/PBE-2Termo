@@ -4,7 +4,7 @@
 // Cenário 1 – Viagem pelo Mundo
 // Um grupo de turistas vai visitar o Japão, o Brasil e o Acre. Em cada lugar da Terra, eles poderão comer comidas típicas e nadar em rios ou praias.
 
-// Classe = Turistas, Lugar
+// Classe = Turistas, Lugar, Atividade, Comida, CorpoAgua
 // Métodos = Visitar, comer, nadar
 
 class Lugar {
@@ -45,5 +45,7 @@ $turismo->adicionarLugar(new Lugar("Brasil"));
 $turismo->adicionarLugar(new Lugar("Acre"));
 
 $turismo->visitar();
+
+// Turismo & Lugares = Associação
 
 ?>
