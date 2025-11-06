@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Formulário - Cadastrar Bebida</title>
 <style>body{font-family:Arial;padding:20px}input,select{display:block;margin:8px 0;padding:8px;width:300px}</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Cadastrar / Atualizar Bebida</h1>

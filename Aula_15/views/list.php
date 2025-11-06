@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Lista de Bebidas</title>
 <style>body{font-family:Arial;padding:20px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:8px}th{background:#f2f2f2}</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Lista de Bebidas</h1>

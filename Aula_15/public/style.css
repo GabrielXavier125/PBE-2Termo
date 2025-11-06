@@ -1,0 +1,148 @@
+/* ====== ESTILO GLOBAL ====== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e8f0fe, #f9f9f9);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* ====== TÍTULOS ====== */
+h1 {
+    color: #1a73e8;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ====== LINKS ====== */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ====== BOTÕES ====== */
+button,
+.add-button {
+    background-color: #1a73e8;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+button:hover,
+.add-button:hover {
+    background-color: #0b57d0;
+    transform: translateY(-1px);
+}
+
+.add-button {
+    margin-bottom: 20px;
+}
+
+/* ====== FORMULÁRIO ====== */
+form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 500;
+    color: #555;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ccd8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+input[type="text"]:focus {
+    border-color: #1a73e8;
+    box-shadow: 0 0 4px rgba(26, 115, 232, 0.3);
+    outline: none;
+}
+
+/* ====== LISTA DE BEBIDAS ====== */
+ul {
+    list-style: none;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li strong {
+    color: #202124;
+}
+
+li span {
+    color: #5f6368;
+}
+
+/* ====== MENSAGEM VAZIA ====== */
+p {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    color: #5f6368;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 600px) {
+    form, ul {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    button, .add-button {
+        width: 100%;
+    }
+}
