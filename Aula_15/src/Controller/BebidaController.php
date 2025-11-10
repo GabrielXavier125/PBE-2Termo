@@ -22,4 +22,10 @@ class BebidaController {
     public function delete($nome) {
         $this->dao->deleteByName($nome);
     }
+
+    public function update($nome, $categoria, $volume, $valor, $qtde) {
+        $bebida = new Bebida($nome, $categoria, $volume, (float)$valor, (int)$qtde);
+        $this->dao->deleteByName($nome);
+        $this->dao->save($bebida);
+    }
 }

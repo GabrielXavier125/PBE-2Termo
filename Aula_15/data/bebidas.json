@@ -1,1 +1,23 @@
-[]
+[
+    {
+        "nome": "Bohemia",
+        "categoria": "Energético",
+        "volume": "300",
+        "valor": 25,
+        "qtde": 20
+    },
+    {
+        "nome": "Glacial",
+        "categoria": "Destilado",
+        "volume": "200",
+        "valor": 30,
+        "qtde": 15
+    },
+    {
+        "nome": "Bebida",
+        "categoria": "Refrigerante",
+        "volume": "250",
+        "valor": 50,
+        "qtde": 50
+    }
+]

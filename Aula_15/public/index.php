@@ -1,10 +1,10 @@
 <?php
-// public/index.php - simple router / front controller
+// public/index.php
 require_once __DIR__ . '/../src/Controller/BebidaController.php';
 
 $controller = new BebidaController();
 
-// Basic routing via 'action' GET/POST param
+// Roteamento
 $action = $_REQUEST['action'] ?? 'index';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,15 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($action === 'delete') {
         $controller->delete($_POST['nome']);
         header('Location: /'); exit;
+    } elseif ($action === 'update') {
+        $controller->update($_POST['nome'], $_POST['categoria'], $_POST['volume'], $_POST['valor'], $_POST['qtde']);
+        header('Location: /'); exit;
     }
 }
 
-// Render views
+// Renderização de páginas
 if ($action === 'index') {
     $bebidas = $controller->index();
     include __DIR__ . '/../views/list.php';
 } elseif ($action === 'form') {
     include __DIR__ . '/../views/form.php';
+} elseif ($action === 'edit') {
+    include __DIR__ . '/../views/edit.php';
 } else {
     http_response_code(404);
     echo 'Página não encontrada';

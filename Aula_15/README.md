@@ -18,6 +18,5 @@ Observações para VS Code:
 - Use Live Server or o servidor embutido do PHP para testar.
 - Ajuste permissões do arquivo data/bebidas.json para escrita pelo PHP se necessário.
 
-Autor (inclua seu nome no README se quiser): Gabriel Dos Santos Xavier
-Curso: Análise e Desenvolvimento de Sistemas (se for projeto SENAI, insira detalhes adicionais)
-
+Autor: Gabriel Dos Santos Xavier
+Curso: Análise e Desenvolvimento de Sistemas
