@@ -2,30 +2,15 @@
 require_once __DIR__ . '/../src/Model/BebidaDAO.php';
 require_once __DIR__ . '/../src/Model/Bebida.php';
 
-// Caminho fixo e absoluto para o JSON
-$pathData = realpath(__DIR__ . '/../data/bebidas.json');
+// Cria a instância do DAO
+$dao = new BebidaDAO();
 
-// Se o arquivo não existir, cria um vazio
-if (!$pathData) {
-    $dirData = __DIR__ . '/../data';
-    if (!is_dir($dirData)) {
-        mkdir($dirData, 0777, true);
-    }
-    $pathData = $dirData . '/bebidas.json';
-    file_put_contents($pathData, json_encode([], JSON_PRETTY_PRINT));
-}
-
-$dao = new BebidaDAO($pathData);
-$bebidas = $dao->getAll();
-
+// Busca a bebida pelo nome usando o novo método
 $nome = $_GET['nome'] ?? null;
 $bebidaSelecionada = null;
 
-foreach ($bebidas as $b) {
-    if ($b->getNome() === $nome) {
-        $bebidaSelecionada = $b;
-        break;
-    }
+if ($nome) {
+    $bebidaSelecionada = $dao->buscarPorNome($nome);
 }
 
 if (!$bebidaSelecionada) {

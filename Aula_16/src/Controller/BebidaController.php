@@ -6,32 +6,24 @@ class BebidaController {
     private $dao;
 
     public function __construct() {
-        $this->dao = new BebidaDAO(__DIR__ . '/../../data/bebidas.json');
+        $this->dao = new BebidaDAO();
     }
 
     // retorna array de Bebida
     public function index() {
-        return $this->dao->getAll();
+        return $this->dao->lerBebidas();
     }
 
     public function create($nome, $categoria, $volume, $valor, $qtde) {
         $bebida = new Bebida($nome, $categoria, $volume, (float)$valor, (int)$qtde);
-        $this->dao->save($bebida);
+        $this->dao->criarBebida($bebida);
     }
 
     public function delete($nome) {
-        $this->dao->deleteByName($nome);
+        $this->dao->excluirBebida($nome);
     }
 
     public function update($nomeOriginal, $nome, $categoria, $volume, $valor, $qtde) {
-        $bebida = new Bebida($nome, $categoria, $volume, (float)$valor, (int)$qtde);
-        
-        // Se o nome foi alterado, deleta o registro antigo
-        if ($nomeOriginal !== $nome) {
-            $this->dao->deleteByName($nomeOriginal);
-        }
-        
-        // Salva a bebida (atualizada ou nova)
-        $this->dao->save($bebida);
+        $this->dao->atualizarBebida($nomeOriginal, $nome, $categoria, $volume, $valor, $qtde);
     }
 }
